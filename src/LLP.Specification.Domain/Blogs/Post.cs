@@ -1,4 +1,6 @@
-﻿namespace LLP.Specification.Domain.Blogs
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace LLP.Specification.Domain.Blogs
 {
     public class Post
     {
@@ -11,6 +13,7 @@
             Update(title);
         }
 
+        [MemberNotNull(nameof(Title))]
         public void Update(string title)
         {
             if (string.IsNullOrEmpty(title)) throw new ArgumentNullException(nameof(title));

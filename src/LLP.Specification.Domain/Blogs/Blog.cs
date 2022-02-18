@@ -1,4 +1,5 @@
 ﻿using LLP.Specification.Domain.Contracts;
+using System.Diagnostics.CodeAnalysis;
 
 namespace LLP.Specification.Domain.Blogs
 {
@@ -15,6 +16,7 @@ namespace LLP.Specification.Domain.Blogs
             Update(name);
         }
 
+        [MemberNotNull(nameof(Name))]
         public void Update(string name)
         {
             if (string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
